@@ -1,5 +1,6 @@
-package ParkingSpot.ParkingSpot;
+package ParkingSpot.Strategy;
+import ParkingSpot.ParkingSpot;
 
 public interface ParkingStrategy {
-    ParkingTicket findingParkSlot();
+    ParkingSpot findingParkSlot();
 }
