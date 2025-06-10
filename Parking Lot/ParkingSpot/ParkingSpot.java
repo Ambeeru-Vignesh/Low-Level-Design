@@ -12,7 +12,7 @@ public abstract class ParkingSpot {
     public ParkingSpot(boolean isOccupied, Floor FloorNum) {
         this.isOccupied = isOccupied;
         this.FloorNum = FloorNum;
-        this.price = price;
+        // this.price = price;
     }
 
     public abstract boolean occupy(VehicleTypes type);
