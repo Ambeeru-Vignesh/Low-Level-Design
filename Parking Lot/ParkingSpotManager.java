@@ -18,6 +18,10 @@ public class ParkingSpotManager {
         this.parkingStrategy = new DefaultParkingStrategy(parkings);
     }
 
+    public void setParkingStrategy(ParkingStrategy strategy) {
+        this.parkingStrategy = strategy;
+    }
+
     private void intializeParkingSpots(List<ParkingSpot> parkingSpots) {
 
         for (VehicleTypes type: VehicleTypes.values()){

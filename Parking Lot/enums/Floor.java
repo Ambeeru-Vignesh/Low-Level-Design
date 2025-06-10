@@ -1,7 +1,7 @@
 package enums;
 
 public enum Floor {
-    GROUD,
+    GROUND,
     FIRST,
     SECOND,
     THIRD

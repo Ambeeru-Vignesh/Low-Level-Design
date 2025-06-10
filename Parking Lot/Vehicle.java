@@ -1,19 +1,25 @@
 import enums.VehicleTypes;
 
 public class Vehicle {
-    private String vehicle_num;
+    private String vehicleNumber;
+    private String color;
     private VehicleTypes type;
 
-    public Vehicle(String vehicle_num, VehicleTypes type){
-        this.vehicle_num = vehicle_num;
+    public Vehicle(VehicleTypes type, String color, String vehicleNumber) {
         this.type = type;
+        this.color = color;
+        this.vehicleNumber = vehicleNumber;
     }
 
-    public String getVehicleNumber(){
-        return vehicle_num;
+    public String getVehicleNumber() {
+        return vehicleNumber;
     }
 
-    public VehicleTypes getType(){
+    public VehicleTypes getType() {
         return type;
+    }
+
+    public String getColor() {
+        return color;
     }
 }

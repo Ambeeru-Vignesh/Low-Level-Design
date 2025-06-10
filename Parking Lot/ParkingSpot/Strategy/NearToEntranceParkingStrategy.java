@@ -1,6 +1,7 @@
 package ParkingSpot.Strategy;
 import java.util.List;
 import ParkingSpot.ParkingSpot;
+import enums.Floor;
 
 public class NearToEntranceParkingStrategy implements ParkingStrategy {
 
@@ -14,9 +15,9 @@ public class NearToEntranceParkingStrategy implements ParkingStrategy {
     public ParkingSpot findingParkSlot() {
         
         return parkingSpots.stream()
-        .filter(spot - > !spot.isOccupied() && spot.getFloorNum() == 1) // Assuming entrance is on floor 1
-        .findFirst()
+                .filter(spot -> !spot.isOccupied() && spot.getFloorNum() == Floor.GROUND) // Assuming entrance is on floor 1
+                .findFirst()
+                .orElse(null);
 
     }
-    
 }
