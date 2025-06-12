@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.AbstractMap.SimpleEntry;
 
 public class Board {
-
     private int size;
     private PlayingPiece[][] board;
 
-    public Board(int size, PlayingPiece[][] board) {
+    public Board(int size) {
         this.size = size;
         this.board = new PlayingPiece[size][size];
     }
@@ -19,15 +19,13 @@ public class Board {
         return true;
     }
 
-    public List<Pair<Integer, Integer>> getFreeCells(){
-
-        List<Pair<Integer, Integer>> freeCells = new ArrayList<>();
+    public List<SimpleEntry<Integer, Integer>> getFreeCells(){
+        List<SimpleEntry<Integer, Integer>> freeCells = new ArrayList<>();
         
-        for (int i = 0; i < size; i ++) {
-            for (int j = 0; j < size; j ++) {
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
                 if (board[i][j] == null) {
-                    Pair<Integer, Integer> rowColumn = new Pair<>();
-                    freeCells.add(rowColumn);
+                    freeCells.add(new SimpleEntry<>(i, j));
                 }
             }
         }
@@ -35,17 +33,24 @@ public class Board {
     }
 
     public void printBoard() {
-        for(int i = 0; i < size; i ++){
-            for(int j = 0; j < size; j ++){
-                if (board[i][j] != null){
-                    System.out.print(board[i][j] + " ");
+        for(int i = 0; i < size; i++) {
+            for(int j = 0; j < size; j++) {
+                if (board[i][j] != null) {
+                    System.out.print(board[i][j].getPlayingType() + " ");
                 } else {
                     System.out.print(" ");
                 }
                 System.out.print(" | ");
             }
-            System.out.println( " | ");
+            System.out.println();
         }
     }
 
+    public int getSize() {
+        return size;
+    }
+
+    public PlayingPiece[][] getBoard() {
+        return board;
+    }
 }
