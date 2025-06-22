@@ -16,7 +16,7 @@ public class EntryGate {
 
         if (spot != null && spot.occupy(VehicleType)){
             int cost = costComputation.CalculateTheCost(VehicleType);
-            this.ticket = new Ticket(spot.getFloorNum().ordinal(), "1234", VehicleType,cost, spot, System.currentTimeMillis());
+            this.ticket = new Ticket(spot.getFloorNum().ordinal(), "1234", VehicleType,cost, spot);
 
             return ticket;
         }
