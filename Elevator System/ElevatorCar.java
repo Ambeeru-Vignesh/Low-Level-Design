@@ -86,6 +86,11 @@ public class ElevatorCar {
         }
     }
 
-    
-
+     // Getters
+    public int getId() { return id; }
+    public int getCurrentFloor() { return currentFloor; }
+    public Direction getDirection() { return direction; }
+    public Status getStatus() { return status; }
+    public Door getDoor() { return door; }
+    public Queue<Integer> getDestinationFloors() { return destinationFloors; }
 }
