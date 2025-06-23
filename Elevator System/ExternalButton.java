@@ -24,7 +24,7 @@ public class ExternalButton {
     }
 
     public int getFloorNumber() {
-        return floorNumber;
+        return floor_num;
     }
 
     public Direction getDirection() {

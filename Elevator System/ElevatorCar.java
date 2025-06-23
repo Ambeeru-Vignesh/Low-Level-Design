@@ -17,7 +17,7 @@ public class ElevatorCar {
     private Door door;
     
     private Queue<Integer> destinations;
-    private Map<Integer, Internal_Button> internalButtons;
+    private Map<Integer, InternalButton> internalButtons;
 
     public ElevatorCar(int id) {
         this.currentFloor = 0;
@@ -58,9 +58,16 @@ public class ElevatorCar {
         }
     }
 
+    public void addDestination(int floor){
+        if (!destinations.contains(floor)){
+            destinations.offer(floor);
+            status = Status.MOVING;
+        }
+    }
+
     public void pressButton(int floor_num){
         if(!internalButtons.containsKey(floor_num)){
-            internalButtons.put(floor_num, new Internal_Button(floor_num));
+            internalButtons.put(floor_num, new InternalButton(floor_num));
         }
         internalButtons.get(floor_num).pressButton();
         destinations.add(floor_num);
@@ -92,5 +99,5 @@ public class ElevatorCar {
     public Direction getDirection() { return direction; }
     public Status getStatus() { return status; }
     public Door getDoor() { return door; }
-    public Queue<Integer> getDestinationFloors() { return destinationFloors; }
+    public Queue<Integer> getDestinationFloors() { return destinations; }
 }
